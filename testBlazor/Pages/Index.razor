@@ -1,0 +1,68 @@
+﻿@page "/"
+
+@using testMysql
+@inject GetMySql GetSql
+
+@* <meta http-equiv="refresh" content="30"> *@
+<Counter></Counter>
+@* <p>Welcome to your new app.</p> *@
+@* <SurveyPrompt Title="How is Blazor working for you?" /> *@
+
+<div id="body">
+    <div class="index_left">
+    <p style="margin-bottom:1px; font-size:25px; color:#5a9cdd;">Data information</p>
+        @if (sqldatas == null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>TEL</th>
+                        <th>CONTENT</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var sqldata in sqldatas)
+                    {
+                        <tr>
+                            @* <td>@sqldata.Date.ToShortDateString()</td> *@
+                            <td>@sqldata.id</td>
+                            <td>@sqldata.name</td>
+                            <td>@sqldata.tel</td>
+                            <td>@sqldata.content</td>
+                            <td>@sqldata.date</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+
+    <div class="index_right">
+        <p style="margin-bottom:1px; font-size:25px; color:#5a9cdd;">Device State</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>SEQ</th>
+                    <th>STATE</th>
+                    <th>TIME</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@code {
+    private SqlData[] sqldatas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        sqldatas = await GetSql.GetSqlDataAsync();
+    }
+}

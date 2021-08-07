@@ -1,0 +1,3 @@
+{"Life_time(s)":214063,"Waste_volumn(%)":91,"Oil_temperature":"D","Oil_level(L)":212,"Oil_filter":true,"Crusher_cycle(times)":2,"Lifting_cycle(times)":18,"Payload(t)":32.0,"Location":{"lat":12.7942,"lon":171.1135},"Remote_shutdown":false,"Power(KWh)":114.644}
+{"Life_time(s)":425283,"Waste_volumn(%)":66,"Oil_temperature":"A","Oil_level(L)":247,"Oil_filter":true,"Crusher_cycle(times)":9,"Lifting_cycle(times)":0,"Payload(t)":29.5,"Location":{"lat":-81.2346,"lon":-1.208},"Remote_shutdown":false,"Power(KWh)":359.1646}
+{"Life_time(s)":1192423,"Waste_volumn(%)":19,"Oil_temperature":"B","Oil_level(L)":255,"Oil_filter":true,"Crusher_cycle(times)":6,"Lifting_cycle(times)":15,"Payload(t)":30.2,"Location":{"lat":68.9264,"lon":34.8589},"Remote_shutdown":false,"Power(KWh)":325.4616}

@@ -1,0 +1,47 @@
+﻿@page "/counter"
+
+@using System.Threading
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+<p>count: @count</p>
+
+@{ var i = 0;}
+@while(i<5)
+{
+    <p>i value: @i</p>
+    ++i;
+    Thread.Sleep(1000);
+}
+
+<button class="btn btn-primary" @onclick="Update">Updatde</button>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private int count =0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    public async Task Update()
+    {
+        Boolean flag =true;
+        await Task.Run(() =>
+        {
+            while(flag)
+            {
+                if(currentCount == 10)
+                    flag = false;
+
+                ++count;
+
+                Thread.Sleep(1000);
+            }
+        });
+    }
+}
